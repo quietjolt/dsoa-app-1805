@@ -12,6 +12,22 @@ Vue.use(VueAxios,axios)
 //store
 import store from './store/store'
 
+//api
+import api from './api/api'
+Vue.prototype.$api = api
+
+//vux
+import { Group, Cell, DatetimePlugin, CloseDialogsPlugin, ConfigPlugin, BusPlugin, LocalePlugin, DevicePlugin, ToastPlugin, AlertPlugin, ConfirmPlugin, LoadingPlugin, WechatPlugin, AjaxPlugin, AppPlugin } from 'vux'
+// plugins
+Vue.use(DevicePlugin)
+Vue.use(ToastPlugin)
+Vue.use(AlertPlugin)
+Vue.use(ConfirmPlugin)
+Vue.use(LoadingPlugin)
+Vue.use(WechatPlugin)
+
+
+
 Vue.config.productionTip = false
 
 

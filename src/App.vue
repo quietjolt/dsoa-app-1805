@@ -21,6 +21,9 @@ body{
 #app {
  height: 100%;
 }
+a{
+  color: #444;
+}
 </style>
 
 <style lang="less">
