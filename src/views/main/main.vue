@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <navbar :title="navTitle" :show-back="showBack"></navbar>
+    <navbar :title="navTitle" :show-back="false" page="main"></navbar>
     <div class="content">
       <div class="con-img">
         <router-link class="con-text" to="/leave">
@@ -19,7 +19,9 @@
           <img src="../img/加班.png" alt>
           <span>加班</span>
         </router-link>
+        
       </div>
+
     </div>
     <tabbar></tabbar>
   </div>
@@ -41,9 +43,6 @@ export default {
   },
   created() {},
   methods: {
-      showBack(){
-
-      }
   },
   components: {
     tabbar: tabbar,

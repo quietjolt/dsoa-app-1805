@@ -16,7 +16,11 @@ import store from './store/store'
 import api from './api/api'
 Vue.prototype.$api = api
 
-//vux
+//service
+import service from '@/service/service'
+Vue.prototype.$service = service
+
+//vux - 目的  this.$vux 
 import { Group, Cell, DatetimePlugin, CloseDialogsPlugin, ConfigPlugin, BusPlugin, LocalePlugin, DevicePlugin, ToastPlugin, AlertPlugin, ConfirmPlugin, LoadingPlugin, WechatPlugin, AjaxPlugin, AppPlugin } from 'vux'
 // plugins
 Vue.use(DevicePlugin)

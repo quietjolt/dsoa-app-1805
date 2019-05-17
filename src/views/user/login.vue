@@ -63,7 +63,7 @@ export default {
           console.log(this) //当前 vm
         },
         onConfirm : () => {
-          this.$router.push("/main")
+          this.$router.replace("/main")
         }
       })
 

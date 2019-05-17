@@ -4,11 +4,11 @@
             <img src="../views/img/首页底.png" alt="">
             <span>首页</span>
         </router-link>
-        <router-link to="/leave" class="tab">
+        <router-link to class="tab">
             <img src="../views/img/消息.png" alt="">
             <span>消息</span>
         </router-link>
-        <router-link to="/clockln" class="tab">
+        <router-link to class="tab">
             <img src="../views/img/wode.png" alt="">
             <span>我的</span>
         </router-link>
@@ -33,6 +33,7 @@ export default {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: #f1f1f1;
 }
 .tabbar img { 
     width: .58rem;

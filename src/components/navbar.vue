@@ -6,9 +6,12 @@
       </div>
       <div class="nav-title">{{title}}</div>
       <div>
-          <router-link to="/record" v-if="showBack">
+          <router-link :to="rightUrl" v-if="page =='leave'">
               <img src="../views/img/时间3.png" alt="" class="nav-img">
           </router-link>
+          <div v-if="page =='main'" @click="dealLogout">
+              <x-icon  type="ios-close-empty" size="30"></x-icon>
+          </div>
       </div>
     </div>
   </div>
@@ -17,20 +20,46 @@
 <script>
 export default {
     name : "navbar",
-    props : ['title','showBack'],
+    props : ['title','showBack',"page"],
     data () {
         return {
             msg : 'hello world',
+            rightUrl:""
+        }
+    },
+    created(){
+        //console.log("this.page = "+this.page)
+        if(this.page == "leave"){
+            this.rightUrl = "/leaveRecord"
+        }
+    },
+    watch:{
+        page(){
+            if(this.page == "leave"){
+                this.rightUrl = "/leaveRecord"
+            }
         }
     },
     methods : {
         dealback(){
             this.$router.back()
+        },
+
+        dealLogout(){
+            // 显示
+            this.$vux.confirm.show({
+                // 组件除show外的属性
+                title:"退出",
+                content:"是否退出,返回登录界面",
+                onCancel : () => {
+                    console.log(this) //当前 vm
+                },
+                onConfirm : () => {
+                    this.$service.clearUserInfo()
+                    this.$router.replace("/login")
+                }
+            })
         }
-    },
-    created(){
-        console.log(this.navTitle)
-        console.log(this.title)
     }
 };
 </script>
